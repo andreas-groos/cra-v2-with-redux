@@ -8,11 +8,11 @@ export class testContainer extends Component {
   static propTypes = {
     test: PropTypes.object,
     testActions: PropTypes.object
-    // prop: PropTypes
   };
 
   componentDidMount = () => {
-    this.props.testActions.testAction();
+    // this.props.testActions.testAction();
+    this.props.testActions.testThunk();
   };
 
   render() {
