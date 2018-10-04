@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actions from "../actions/testActions";
 
+import { ContextConsumer } from "../App";
 export class testContainer extends Component {
   static propTypes = {
     test: PropTypes.object,
@@ -19,6 +20,7 @@ export class testContainer extends Component {
     return (
       <div>
         <h1>TestContainer</h1>
+        <ContextConsumer>{context => <p>{context.a}</p>}</ContextConsumer>
       </div>
     );
   }

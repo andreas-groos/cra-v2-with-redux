@@ -6,12 +6,16 @@ import configureStore, { history } from "./store";
 import TestContainer from "./containers/testContainer";
 
 const store = configureStore();
+const Context = React.createContext();
+export const ContextConsumer = Context.Consumer;
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          <TestContainer />
+          <Context.Provider value={{ a: 2 }}>
+            <TestContainer />
+          </Context.Provider>
         </ConnectedRouter>
       </Provider>
     );
